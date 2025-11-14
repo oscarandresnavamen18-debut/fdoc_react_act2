@@ -1,26 +1,120 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background-color: #f5f7fa; /* Very light gray background */
+  --card-bg: #ffffff; /* White card background */
+  --primary-color: #5dade2; /* Soft blue */
+  --secondary-color: #aed6f1; /* Lighter blue */
+  --text-color-main: #333333; /* Dark gray for main text */
+  --text-color-secondary: #777777; /* Medium gray for secondary text */
+  --accent-color: #f7dc6f; /* Soft yellow accent */
+  --border-radius: 12px; /* Slightly rounded corners */
+  --box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  --transition-speed: 0.3s; /* Standard transition speed */
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color-main);
+  line-height: 1.6;
+  margin: 0;
+  padding: 20px; /* Add padding around the body */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* ====================================
+   Card Container
+   ==================================== */
+
+.tarjeta {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box_shadow);
+  padding: 25px;
+  max-width: 500px; /* Increased max width */
+  width: 90%; /* Take up 90% of the available width */
+  margin: 20px;
+  text-align: left;
+  transition: box-shadow var(--transition-speed) ease;
+}
+
+.tarjeta:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow on hover */
+}
+
+/* ====================================
+   Typography
+   ==================================== */
+
+.tarjeta h1 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--text-color-main);
+  margin-bottom: 15px;
+  border-bottom: 2px solid var(--secondary-color); /* Add a subtle underline */
+  padding-bottom: 8px;
+}
+
+.tarjeta h2 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--primary-color);
+  margin: 18px 0 10px;
+}
+
+.tarjeta p {
+  font-size: 1.1rem;
+  color: var(--text-color-secondary);
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+/* ====================================
+   Primary Button
+   ==================================== */
+
+.boton {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: var(--accent-color);
+  color: var(--text-color-main);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--transition-speed) ease, transform 0.2s ease;
+}
+
+.boton:hover {
+  background-color: #f4d03f; /* Slightly darker yellow on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* ====================================
+   Media Queries for Responsiveness
+   ==================================== */
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px; /* Reduce body padding on smaller screens */
+  }
+
+  .tarjeta {
+    width: 95%; /* Take up more width on smaller screens */
+    margin: 10px; /* Reduce margin on smaller screens */
+  }
+
+  .tarjeta h1 {
+    font-size: 2rem; /* Slightly smaller heading on smaller screens */
+  }
+
+  .tarjeta p {
+    font-size: 1rem; /* Slightly smaller paragraph text on smaller screens */
+  }
 }
