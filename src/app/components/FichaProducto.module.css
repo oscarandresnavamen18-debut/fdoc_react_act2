@@ -1,0 +1,46 @@
+.tarjeta {
+  width: 300px;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  margin: auto;
+}
+
+.imagen {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.nombre {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.precioBoton {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  align-items: center;
+}
+
+.precio {
+  font-size: 18px;
+  color: #2563eb;
+}
+
+.boton {
+  padding: 8px 14px;
+  background: #10b981;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.boton:hover {
+  background: #059669;
+}
